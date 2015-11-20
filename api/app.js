@@ -10,3 +10,10 @@ var methodOverride = require("method-override");
 var jwt            = require('jsonwebtoken');
 var expressJWT     = require('express-jwt');
 var app            = express();
+
+var config         = require('./config/config');
+var secret         = require('./config/config').secret;
+
+mongoose.connect(config.database);
+
+app.listen(3000);
