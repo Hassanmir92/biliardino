@@ -1,2 +1,2 @@
-# emily-hassan-project
-Amazing project by Emily &amp; Hassan
+# foodsball-map
+Amazing project by Emily, Hassan &amp; Jac
