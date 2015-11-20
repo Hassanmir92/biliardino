@@ -31,4 +31,22 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(passport.initialize());
 
+app.use('/api', expressJWT({ secret: secret })
+  .unless({
+    path: [
+      { url: '/api/login', methods: ['POST'] },
+      { url: '/api/register', methods: ['POST'] }
+    ]
+  }));
+
+app.use(function (err, req, res, next) {
+  if (err.name === 'UnauthorizedError') {
+    return res.status(401).json({message: 'Unauthorized request.'});
+  }
+  next();
+});
+
+var routes = require('./config/routes');
+app.use("/api", routes);
+
 app.listen(3000);
