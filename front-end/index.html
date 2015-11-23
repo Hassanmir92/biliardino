@@ -5,48 +5,52 @@
   <title>Biliardino</title>
   <link rel="stylesheet" type="text/css" href="./css/foundation.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Leckerli+One' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="./js/mapStyle.js"></script>
   <script type="text/javascript" src="./js/vendor/jquery.min.js"></script>
   <script type="text/javascript" src="./js/foundation.min.js"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=places"></script>
+  <script type="text/javascript" src="./js/login.js"></script>
   <script type="text/javascript" src="./js/app.js"></script>
 </head>
 <body>
   <div class="top-bar">
     <div class="top-bar-left">
       <ul class="menu">
-        <li class="menu-text">BILIARDINO</li>
+        <li class="menu-text">Biliardino</li>
       </ul>
     </div>
     <div class="top-bar-right">
       <ul class="menu">
-        <li><a data-open="login-modal">Login</a></li>
-        <li><a data-open="signup-modal">Signup</a></li>
+        <li class="logged-out"><a data-open="login-modal">Login</a></li>
+        <li class="logged-out"><a data-open="signup-modal">Signup</a></li>
+        <li class="logged-in logout-link"><a href="#">Logout</a></li>
         <li><input type="search" placeholder="Search"></li>
         <li><button type="button" class="button">Search</button></li>
       </ul>
     </div>
   </div>
 
-  <div class="reveal" id="login-modal" data-reveal>
+  <div class="reveal form-modal" id="login-modal" data-reveal>
     <h1>Login</h1>
-    <form id="login" action="" method="post">
+    <form id="login" action="/login" method="post">
       <input id="email" type="text" name="email" placeholder="Email">
       <input id="password" type="password" name="password" placeholder="Password">
-      <input class="button expand" type="submit" value="Login">
+      <input class="button form-submit close-reveal-modal" type="submit" value="Login" data-close>
     </form>
     <button class="close-button" data-close aria-label="Close reveal" type="button">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
 
-  <div class="reveal" id="signup-modal" data-reveal>
+  <div class="reveal form-modal" id="signup-modal" data-reveal>
     <h1>Sign Up</h1>
-    <form id="signup" action="" method="post">
-      <input id="signup_email" type="text" placeholder="Email">
-      <input id="signup_password" type="password" placeholder="Password">
-      <input id="signup_fullname" type="text" placeholder="Name">
-      <input class="button expand" type="submit" value="Signup">
+    <form id="signup" action="/register" method="post">
+      <input id="signup_email" type="text" name="email" placeholder="Email">
+      <input id="signup_password" name="password" type="password" placeholder="Password">
+      <input id="signup_fullname" name="fullname" type="text" placeholder="Name">
+      <input id="signup_role" name="role" type="text" placeholder="Role">
+      <input class="button form-submit close-reveal-modal" type="submit" value="Signup" data-close>
     </form>
     <button class="close-button" data-close aria-label="Close reveal" type="button">
       <span aria-hidden="true">&times;</span>
@@ -54,7 +58,6 @@
   </div>
 
   <input type="text" name="location" id="places-input">
-
   <div id="map"></div>
 </body>
 </html>

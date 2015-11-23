@@ -4,9 +4,16 @@ $(function(){
   function initialize() {
     var mapOptions = {
       styles: mapStyle,
+      mapTypeControl: false,
+      streetViewControl: false,
+      panControl: false,
       center: {lat: 51.507398, lng: -0.127761},
       zoom: 13,
-      scrollwheel: false
+      scrollwheel: false,
+      zoomControlOptions: {
+        style: google.maps.ZoomControlStyle.SMALL,
+        position: google.maps.ControlPosition.LEFT_TOP
+      } 
     };
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
     var input = (document.getElementById('places-input'));
