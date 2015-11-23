@@ -23,7 +23,7 @@ function checkLoginState(){
 
 function submitForm(){
   event.preventDefault();
-
+  hideErrors();
   var method = $(this).attr("method");
   var url    = "http://localhost:3000/api"+ $(this).attr("action");
   var data   = $(this).serialize();
@@ -38,13 +38,13 @@ function logout(){
   checkLoginState();
 }
 
-// function hideErrors(){
-//   return $('.alert').removeClass("show").addClass("hide") 
-// }
+function hideErrors(){
+  return $('.alert').removeClass("show").addClass("hide") 
+}
 
-// function displayErrors(data){
-//   return $('.alert').text(data).removeClass("hide").addClass("show") 
-// }
+function displayErrors(data){
+  return $('.alert').text(data).removeClass("hide").addClass("show") 
+}
 
 function loggedInState(){
   $('.logged-out').hide();
@@ -93,6 +93,6 @@ function ajaxRequest(method, url, data, callback){
   }).done(function(data){
     if(callback) callback(data)
   }).fail(function(data){
-    // displayErrors(data.responseJSON.message);
+    displayErrors(data.responseJSON.message);
   });
 }
