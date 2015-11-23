@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var Vote     = mongoose.model('Vote');
 
 var clubSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -8,7 +9,7 @@ var clubSchema = new mongoose.Schema({
   address: { type: String, required: true },
   lat: Number,
   lng: Number,
-  votes: [],
+  votes: [Vote.schema],
   bookable: Boolean
 });
 
