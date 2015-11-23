@@ -14,7 +14,7 @@ function clubsCreate(req, res){
   club.save(function(err){
     if(err) return res.render("error", {message: "Something went wrong."});
     
-    res.status(201).json({message: 'Club successfully created.', club: club});
+     return res.status(201).json({message: 'Club successfully created.', club: club});
   });
 };
 

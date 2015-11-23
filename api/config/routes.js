@@ -22,8 +22,8 @@ router.route('/users/:id')
 
 // Club routes
 router.route('/clubs')
+  .post(clubsController.clubsCreate)
   .get(clubsController.clubsIndex)
-  .post(clubsController.clubsPost)
 
 router.route('/clubs/:id')
   .get(clubsController.clubsShow)
