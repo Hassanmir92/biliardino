@@ -20,20 +20,33 @@
     </div>
     <div class="top-bar-right">
       <ul class="menu">
-        <li><a data-open="exampleModal1">Login</a></li>
-        <li><a data-open="exampleModal1">Signup</a></li>
+        <li><a data-open="login-modal">Login</a></li>
+        <li><a data-open="signup-modal">Signup</a></li>
         <li><input type="search" placeholder="Search"></li>
         <li><button type="button" class="button">Search</button></li>
       </ul>
     </div>
   </div>
 
-  <div class="reveal" id="exampleModal1" data-reveal>
+  <div class="reveal" id="login-modal" data-reveal>
     <h1>Login</h1>
-    <form id="login" action="https://floating-sea-7710.herokuapp.com/login" method="post">
-      <input class="email row" type="text" name="email" placeholder="Email">
-      <input class="password" type="password" name="password" placeholder="Password">
+    <form id="login" action="" method="post">
+      <input id="email" type="text" name="email" placeholder="Email">
+      <input id="password" type="password" name="password" placeholder="Password">
       <input class="button expand" type="submit" value="Login">
+    </form>
+    <button class="close-button" data-close aria-label="Close reveal" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="reveal" id="signup-modal" data-reveal>
+    <h1>Sign Up</h1>
+    <form id="signup" action="" method="post">
+      <input id="signup_email" type="text" placeholder="Email">
+      <input id="signup_password" type="password" placeholder="Password">
+      <input id="signup_fullname" type="text" placeholder="Name">
+      <input class="button expand" type="submit" value="Signup">
     </form>
     <button class="close-button" data-close aria-label="Close reveal" type="button">
       <span aria-hidden="true">&times;</span>
