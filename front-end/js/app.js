@@ -30,7 +30,7 @@ $(function(){
     google.maps.event.addListener(autocomplete, 'place_changed', function() {
       infowindow.close();
       var place = autocomplete.getPlace();
-      console.log(place);
+      console.log(place.photos[0].getUrl({ 'maxWidth': 500, 'maxHeight': 500 }));
       if (!place.geometry) {
         return;
       }
