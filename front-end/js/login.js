@@ -6,6 +6,13 @@ function initialize(){
   checkLoginState();
 }
 
+function currentUser(){
+  var url = 'http://localhost:3000/api/users/'+getUserId()
+  ajaxRequest('get', url, null, function(data){
+    $('.username').html(data.user.local.fullname)
+  });
+}
+
 function checkLoginState(){
   if(getToken()){
     return loggedInState();
@@ -42,6 +49,7 @@ function logout(){
 function loggedInState(){
   $('.logged-out').hide();
   $('.logged-in').show();
+  currentUser()
 }
 
 function loggedOutState(){
@@ -50,16 +58,21 @@ function loggedOutState(){
 }
 
 function authenticationSuccessful(data){
-  if (data.token) setToken(data.token);
+  if (data.token) setToken(data.token, data.user._id);
   return checkLoginState();
 }
 
-function setToken(token){
-  return window.localStorage.setItem("token", token);
+function setToken(token, user){
+  window.localStorage.setItem("token", token);
+  return window.localStorage.setItem("user", user);
 }
 
 function getToken(){
   return localStorage.getItem('token');
+}
+
+function getUserId(){
+  return localStorage.getItem('user');
 }
 
 function removeToken(){
