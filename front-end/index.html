@@ -4,74 +4,64 @@
   <meta charset="UTF-8">
   <title>Biliardino</title>
   <link rel="stylesheet" type="text/css" href="./css/foundation.css">
+  <link rel="stylesheet" type="text/css" href="./css/vendor/avgrund.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
   <link href='https://fonts.googleapis.com/css?family=Leckerli+One' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="./js/mapStyle.js"></script>
   <script type="text/javascript" src="./js/vendor/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/vendor/jquery.avgrund.js"></script>
   <script type="text/javascript" src="./js/vendor/foundation.min.js"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=places"></script>
   <script type="text/javascript" src="./js/login.js"></script>
   <script type="text/javascript" src="./js/app.js"></script>
+  <script type="text/javascript" src="./js/avgrund.js"></script>
 </head>
 <body>
-  <div class="top-bar">
-    <div class="top-bar-left">
-      <ul class="menu">
-        <li class="menu-text">Biliardino</li>
-      </ul>
+  <div class="blur">
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">Biliardino</li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li id="login-button" class="logged-out"><a href="#">Login</a></li>
+          <li id="signup-button" class="logged-out"><a data-open="signup-modal">Signup</a></li>
+          <li class="logged-in">Hello, <span class="username"></span></li>
+          <li class="logged-in logout-link"><a href="#">Logout</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="top-bar-right">
-      <ul class="menu">
-        <li class="logged-out"><a data-open="login-modal">Login</a></li>
-        <li class="logged-out"><a data-open="signup-modal">Signup</a></li>
-        <li class="logged-in">Hello, <span class="username"></span></li>
-        <li class="logged-in logout-link"><a href="#">Logout</a></li>
-      </ul>
+
+    <div class="callout primary">
+      <h3>Add Club</h3>
+      <form id="club" action="/clubs" method="post">
+        <input id="name" type="text" name="name" placeholder="Name">
+        <input id="description" type="text" name="description" placeholder="Description">
+        <input id="image" type="text" name="image" placeholder="Image">
+        <input id="places-input" type="text" name="address" placeholder="Address">
+        <input id="bookable" type="text" name="bookable" placeholder="Bookable?">
+        <input class="button form-submit close-reveal-modal" type="submit" value="Add Club" data-close>
+      </form>
     </div>
-  </div>
 
-  <div class="callout primary">
-  <h3>Add Club</h3>
-    <form id="club" action="/clubs" method="post">
-      <input id="name" type="text" name="name" placeholder="Name">
-      <input id="description" type="text" name="description" placeholder="Description">
-      <input id="image" type="text" name="image" placeholder="Image">
-      <input id="places-input" type="text" name="address" placeholder="Address">
-      <input id="bookable" type="text" name="bookable" placeholder="Bookable?">
-      <input id="lat" type="text" name="lat" placeholder="Lat">
-      <input id="lng" type="text" name="lng" placeholder="Lng">
-      <input class="button form-submit close-reveal-modal" type="submit" value="Add Club" data-close>
-    </form>
-  </div>
+    <div class="reveal form-modal" id="signup-modal" data-reveal>
+      <div class="hide alert alert-danger" role="alert"></div>
+      <h1>Sign Up</h1>
+      <form id="signup" action="/register" method="post">
+        <input id="signup_email" type="text" name="email" placeholder="Email">
+        <input id="signup_password" name="password" type="password" placeholder="Password">
+        <input id="signup_fullname" name="fullname" type="text" placeholder="Name">
+        <input id="signup_role" name="role" type="text" placeholder="Role">
+        <input class="button form-submit close-reveal-modal" type="submit" value="Signup" data-close>
+      </form>
+      <button class="close-button" data-close aria-label="Close reveal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
 
-  <div class="reveal form-modal" id="login-modal" data-reveal>
-    <div class="hide alert alert-danger" role="alert"></div>
-    <h1>Login</h1>
-    <form id="login" action="/login" method="post">
-      <input id="email" type="text" name="email" placeholder="Email">
-      <input id="password" type="password" name="password" placeholder="Password">
-      <input class="button form-submit close-reveal-modal" type="submit" value="Login" data-close>
-    </form>
-    <button class="close-button" data-close aria-label="Close reveal" type="button">
-      <span aria-hidden="true">&times;</span>
-    </button>
+    <div id="map"></div>
   </div>
-
-  <div class="reveal form-modal" id="signup-modal" data-reveal>
-    <div class="hide alert alert-danger" role="alert"></div>
-    <h1>Sign Up</h1>
-    <form id="signup" action="/register" method="post">
-      <input id="signup_email" type="text" name="email" placeholder="Email">
-      <input id="signup_password" name="password" type="password" placeholder="Password">
-      <input id="signup_fullname" name="fullname" type="text" placeholder="Name">
-      <input id="signup_role" name="role" type="text" placeholder="Role">
-      <input class="button form-submit close-reveal-modal" type="submit" value="Signup" data-close>
-    </form>
-    <button class="close-button" data-close aria-label="Close reveal" type="button">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-
-  <div id="map"></div>
 </body>
 </html>

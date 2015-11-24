@@ -113,7 +113,7 @@ googleMap.addClub = function(club, index) {
   // Adding Citymapper link with bar lat and lng
   // Adding click listener to open info window when marker is clicked
   marker.addListener('click', function(){
-    markerClick(marker, club);
+    googleMap.markerClick(marker, club);
   });  
 }
 
