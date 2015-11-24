@@ -108,7 +108,6 @@ googleMap.addClub = function(club, index) {
   });
   
   // Setting up info window based on json bar (name, image, description, facebook) data
-  // Adding Citymapper link with bar lat and lng
   // Adding click listener to open info window when marker is clicked
   marker.addListener('click', function(){
     googleMap.markerClick(marker, club);
