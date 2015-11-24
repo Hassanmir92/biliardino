@@ -9,8 +9,6 @@ var googleMap = googleMap || {};
 
 googleMap.initialize = function() {
 
-  $(document).foundation();
-
   var mapCanvas = document.getElementById('map');
   var center = new google.maps.LatLng(51.517557, -0.095624);
   var mapOptions = {

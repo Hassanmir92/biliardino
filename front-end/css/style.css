@@ -1,13 +1,131 @@
-#map {
-  width: 100vw;
-  height: 100vh;
-}
-
-.menu-text {
-  font-family: 'Leckerli One', cursive;
-  font-size: 18px;
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background-color: black;
+  font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+nav {
+  background: #444;
+  height: 70px;
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: inline-block;
+  line-height: 60px;
+  padding: 5px
+}
+
+a {
+  text-decoration: none;
+  color: #f2f2f2;
+}
+
+.topbar .right {
+  float: right;
+}
+
+.topbar img {
+  width: 240px;
+}
+
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+  text-align: center;
+}
+
+.sidebar {
+  background: #fafafa;
+  color: #222;
+  overflow: hidden;
+  border-right: 25px solid #a4e4c7;
+}
+
+img.first {
+  position: absolute;
+  top: 500px;
+  left: 500px;
+}
+
+img.second {
+  position: absolute;
+  top: 120px;
+  left: 900px;
+}
+
+#map {
+  height: 100vh;
+}
+
+.tile {
+  margin: 15px;
+  text-align: justify;
+}
+
+.tile h1 {
+  font-size: 45px;
+  letter-spacing: -2px;
+  color: #333;
+  font-weight: 600;
+}
+
+.tile h2 {
+  font-size: 15px;
+  margin-top: -30px;
+  font-weight: 300;
+  font-style: italic;
+  color: #555;
+}
+
+.tile p {
+  margin-top: 5px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.title img {
+  width: 410px;
+}
+
+.tile ul {
+  text-align: center;
+  margin: 0;
+  margin-top: -4px;
+  padding: 0;
+  height: 40px;
+}
+
+.tile ul li {
+  width: 45%;
+  line-height: 30px;
+  display: inline-block;
+}
+
+.tile img {
+  border-radius: 2px;
+}
+
+.tile hr {
+  border: none;
+  margin-top: -1px;
+  height: 1px;
+  background-color: #c0c8c9;
+  background-image: -webkit-linear-gradient(0deg, #fff, #c0c8c9, #fff);
+}
+
+.toolbar img {
+  margin: 5px;
 }

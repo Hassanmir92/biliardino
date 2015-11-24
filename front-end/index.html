@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Biliardino</title>
-  <link rel="stylesheet" type="text/css" href="./css/foundation.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="./css/vendor/avgrund.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
-  <link href='https://fonts.googleapis.com/css?family=Leckerli+One' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+
+  <!-- JS -->
   <script type="text/javascript" src="./js/mapStyle.js"></script>
   <script type="text/javascript" src="./js/vendor/jquery.min.js"></script>
   <script type="text/javascript" src="./js/vendor/jquery.avgrund.js"></script>
-  <script type="text/javascript" src="./js/vendor/foundation.min.js"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=places"></script>
   <script type="text/javascript" src="./js/login.js"></script>
   <script type="text/javascript" src="./js/app.js"></script>
@@ -18,21 +21,15 @@
 </head>
 <body>
   <div class="blur">
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text">Biliardino</li>
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li id="login-button" class="logged-out"><a href="#">Login</a></li>
-          <li id="signup-button" class="logged-out"><a href="#">Signup</a></li>
-          <li class="logged-in">Hello, <span class="username"></span></li>
-          <li class="logged-in logout-link"><a href="#">Logout</a></li>
-        </ul>
-      </div>
-    </div>
+    <nav>
+      <ul class="topbar">
+        <li><img src="images/logo.png"></li>
+        <li id="login-button" class="logged-out"><a href="#">Login</a></li>
+        <li id="signup-button" class="logged-out"><a href="#">Signup</a></li>
+        <li class="logged-in">Hello, <span class="username"></span></li>
+        <li class="logged-in logout-link"><a href="#">Logout</a></li>
+      </ul>
+    </nav>
 
     <div class="callout primary">
       <h3>Add Club</h3>
@@ -46,7 +43,27 @@
       </form>
     </div>
 
-    <div id="map"></div>
+
+    <main>
+      <div id="layout" class="pure-g">
+        <div class="sidebar pure-u-1 pure-u-md-3-8">
+          <div class="tile">
+            <h1>Bar Kick</h1>
+            <h2>127 Shoreditch High Street, London E1 6JE</h2>
+            <img src="http://4.bp.blogspot.com/-NcwbGu3QaTU/TjHU-9vSZtI/AAAAAAAAHuk/9C5G322-yXM/s1600/bar-%20kick-0836.jpg" width="412">
+            <div class="toolbar">
+              <img src="http://megaicons.net/static/img/icons_title/8/178/title/numbers-9-icon.png" width="30">
+              <img src="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-round/700/011_yes-128.png" width="30">
+            </div>
+            <hr>
+            <p>Continental-style table-football café with René Pierre tables.</p>
+          </div>
+        </div>
+        <div class="content pure-u-1 pure-u-md-5-8">
+          <div id="map"></div>
+        </div>
+      </div>
+    </main>
   </div>
 </body>
 </html>
