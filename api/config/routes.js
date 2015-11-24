@@ -33,6 +33,9 @@ router.route('/clubs/:id')
 router.route('/clubs/:id/vote')
   .patch(clubsController.clubsAddVote)
 
+router.route('/clubs/:id/approve')
+  .patch(clubsController.clubsApprove)
+
 module.exports = router;
 
 

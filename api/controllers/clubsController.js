@@ -11,6 +11,7 @@ function clubsIndex(req, res) {
 function clubsCreate(req, res){
   var club_params = req.body
   var club = new Club(club_params);
+  club.approved = false;
   club.save(function(err){
     if(err) return res.render("error", {message: "Something went wrong."});
     
@@ -66,6 +67,23 @@ function clubsAddVote(req, res){
   });
 }
 
+function clubsApprove(req, res){
+
+  Club.findById(req.params.id, function(err, club) {
+    if (err) return res.status(500).json({message: "Something went wrong!"});
+    if (!club) return res.status(404).json({message: 'No club found.'});
+
+    club.approved = true;
+
+    club.save(function(err) {
+     if (err) return res.status(500).json({message: "Something went wrong!"});
+
+      res.status(201).json({message: 'Club successfully approved.', club: club});
+    });
+  });
+}
+
+
 function clubsDelete(req, res){
   Club.findByIdAndRemove({_id: req.params.id}, function(err){
    if (err) return res.status(404).json({message: 'Something went wrong.'});
@@ -79,5 +97,6 @@ module.exports = {
   clubsShow:    clubsShow,
   clubsUpdate:  clubsUpdate,
   clubsAddVote: clubsAddVote,
+  clubsApprove: clubsApprove,
   clubsDelete:  clubsDelete
 }
