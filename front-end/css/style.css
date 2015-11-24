@@ -50,8 +50,10 @@ body {
 .sidebar {
   background: #fafafa;
   color: #222;
-  overflow: hidden;
   border-right: 25px solid #a4e4c7;
+  height: -webkit-calc(100% - 65px);
+  max-height: 80vh;
+  overflow: scroll;
 }
 
 img.first {
@@ -66,8 +68,12 @@ img.second {
   left: 900px;
 }
 
+.content{
+  max-height: 80vh;
+}
+
 #map {
-  height: 100vh;
+  height: 80vh;
 }
 
 .tile {
