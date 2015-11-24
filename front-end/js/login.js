@@ -2,6 +2,7 @@ $(initialize);
 
 function initialize(){
   $("body").on("click", 'form#login', submitForm);
+  $("body").on("click", 'form#signup', submitForm);
   $('form#signup').on('submit', submitForm);
   $('.logout-link').on('click', logout);
   checkLoginState();
