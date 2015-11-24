@@ -30,8 +30,22 @@
     </div>
   </div>
 
+  <div class="callout primary">
+  <h3>Add Club</h3>
+    <form id="login" action="/clubs" method="post">
+      <input id="name" type="text" name="name" placeholder="Name">
+      <input id="description" type="text" name="description" placeholder="Description">
+      <input id="image" type="text" name="image" placeholder="Image">
+      <input id="places-input" type="text" name="address" placeholder="Address">
+      <input id="bookable" type="text" name="bookable" placeholder="Bookable?">
+      <input id="lat" type="text" name="lat" placeholder="Lat">
+      <input id="lng" type="text" name="lng" placeholder="Lng">
+      <input class="button form-submit close-reveal-modal" type="submit" value="Login" data-close>
+    </form>
+  </div>
+
   <div class="reveal form-modal" id="login-modal" data-reveal>
-  <div class="hide alert alert-danger" role="alert"></div>
+    <div class="hide alert alert-danger" role="alert"></div>
     <h1>Login</h1>
     <form id="login" action="/login" method="post">
       <input id="email" type="text" name="email" placeholder="Email">
@@ -44,7 +58,7 @@
   </div>
 
   <div class="reveal form-modal" id="signup-modal" data-reveal>
-  <div class="hide alert alert-danger" role="alert"></div>
+    <div class="hide alert alert-danger" role="alert"></div>
     <h1>Sign Up</h1>
     <form id="signup" action="/register" method="post">
       <input id="signup_email" type="text" name="email" placeholder="Email">
@@ -58,7 +72,6 @@
     </button>
   </div>
 
-  <input type="text" name="location" id="places-input">
   <div id="map"></div>
 </body>
 </html>
