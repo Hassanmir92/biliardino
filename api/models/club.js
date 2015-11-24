@@ -7,6 +7,7 @@ var clubSchema = new mongoose.Schema({
   image: { type: String },
   numberOfTables: Number,
   address: String,
+  website: String,
   lat: Number,
   lng: Number,
   votes: [Vote.schema],

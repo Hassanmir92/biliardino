@@ -1,7 +1,8 @@
 $(initialize);
 
 function initialize(){
-  $('form#login').on('submit', submitForm);
+  $("body").on("click", 'form#login', submitForm);
+  $("body").on("click", 'form#signup', submitForm);
   $('form#signup').on('submit', submitForm);
   $('.logout-link').on('click', logout);
   checkLoginState();
@@ -95,6 +96,9 @@ function ajaxRequest(method, url, data, callback){
     beforeSend: setRequestHeader
   }).done(function(data){
     if(callback) callback(data)
+    $(this).parent().hide();
+    $('body').removeClass('avgrund-active')
+
   }).fail(function(data){
     displayErrors(data.responseJSON.message);
   });
