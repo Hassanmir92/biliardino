@@ -1,19 +1,18 @@
 $(document).ready(function(){
-  initialize();
+  googleMap.initialize();
+  $('form#club').on('submit', googleMap.addNewClub);
 });
 
 var infowindow;
 var marker;
+var googleMap = googleMap || {};
 
-function initialize() {
+googleMap.initialize = function() {
 
   $(document).foundation();
-  // Getting the map div in the html file
+
   var mapCanvas = document.getElementById('map');
-
-  // Setting up map options to render map of London
   var center = new google.maps.LatLng(51.517557, -0.095624);
-
   var mapOptions = {
     center: center,
     zoom: 13,
@@ -30,23 +29,22 @@ function initialize() {
     } 
   }
 
-  // Rendering desired map in selected div
   window.map = new google.maps.Map(mapCanvas, mapOptions);
 
   // Autocomplete
   var input = (document.getElementById('places-input'));
   var autocomplete = new google.maps.places.Autocomplete(input);
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
-    infowindow.close();
-    var place = autocomplete.getPlace();
-    console.log(place.photos[0].getUrl({ 'maxWidth': 500, 'maxHeight': 500 }));
-    if (!place.geometry) {
+    // infowindow.close();
+    googleMap.place = autocomplete.getPlace();
+    // console.log(googleMap.place.photos[0].getUrl({ 'maxWidth': 500, 'maxHeight': 500 }));
+    if (!googleMap.place.geometry) {
       return;
     }
-    if (place.geometry.viewport) {
-      map.fitBounds(place.geometry.viewport);
+    if (googleMap.place.geometry.viewport) {
+      map.fitBounds(googleMap.place.geometry.viewport);
     } else {
-      map.setCenter(place.geometry.location);
+      map.setCenter(googleMap.place.geometry.location);
       map.setZoom(17);
     }
   });
@@ -56,37 +54,52 @@ function initialize() {
     window.map.setCenter(center);
   });
 
-  // Once map has loaded fully then start adding bars
-  // google.maps.event.addListenerOnce(map, 'idle', function(){
-  //   setTimeout(function(){
-  //     if (localStorage.getItem("access_token") !== null) {
-  //       addClubs();
-  //     }
-  //   }, 200); 
-  // });
-
-  addClubs();
+  googleMap.addClubs();
 }
 
-function addClubs(){
+googleMap.addNewClub = function(){
+  console.log(googleMap.place)
+  event.preventDefault();
+  var method = "post"
+  var url    = "http://localhost:3000/api/clubs"
+  var data   = {
+    name: $('form#club #name').val(),
+    description: $('form#club #description').val(),
+    image: $('form#club #image').val(),
+    bookable: $('form#club #bookable').val(),
+    lng: googleMap.place.geometry.location.lng(),
+    lat: googleMap.place.geometry.location.lat()
+  }
+  console.log(data);
+
+  $.ajax({
+    method: method,
+    url: url,
+    data: data
+  }).done(function(data){
+    console.log(data)
+    googleMap.addClubs(data);
+  });
+}
+
+googleMap.addClubs = function(){
   // Making ajax call to back-end in order to retrieve json bar data
   var ajax = $.ajax({
     method: "get",
     url: 'http://localhost:3000/api/clubs'
   }).done(function(data){
     console.log("DATA", data);
-    console.log("DATA.CLUBS", data.clubs);
     $.each(data.clubs, function(index, club){
       (function(){
         setTimeout(function() {
-          addClub(club);
+          googleMap.addClub(club);
         }, (index+1) * 200);
       }(club, index));
     });
   });
 }
 
-function addClub(club, index) {
+googleMap.addClub = function(club, index) {
   // Setting up marker based on json bar (name, lat, lng) data
   var marker = new google.maps.Marker({
     position: {lat: club.lat, lng: club.lng},
@@ -104,7 +117,7 @@ function addClub(club, index) {
   });  
 }
 
-function markerClick(marker, club) {
+googleMap.markerClick = function(marker, club) {
   if(infowindow) infowindow.close();
 
   infowindow = new google.maps.InfoWindow({

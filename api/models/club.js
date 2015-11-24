@@ -2,11 +2,11 @@ var mongoose = require('mongoose');
 var Vote     = mongoose.model('Vote');
 
 var clubSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  description: { type: String, required: true },
-  image: { type: String, required: true },
+  name: { type: String },
+  description: { type: String },
+  image: { type: String },
   numberOfTables: Number,
-  address: { type: String, required: true },
+  address: String,
   lat: Number,
   lng: Number,
   votes: [Vote.schema],
