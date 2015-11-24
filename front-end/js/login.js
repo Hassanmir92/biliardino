@@ -1,7 +1,8 @@
 $(initialize);
 
 function initialize(){
-  $('form').on('submit', submitForm);
+  $('form#login').on('submit', submitForm);
+  $('form#signup').on('submit', submitForm);
   $('.logout-link').on('click', logout);
   checkLoginState();
 }
@@ -27,6 +28,8 @@ function submitForm(){
   var method = $(this).attr("method");
   var url    = "http://localhost:3000/api"+ $(this).attr("action");
   var data   = $(this).serialize();
+  data.lat = 51.520244
+  data.lng = -0.072149
   console.log(data)
 
   return ajaxRequest(method, url, data, authenticationSuccessful)
