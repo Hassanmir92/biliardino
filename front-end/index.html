@@ -24,29 +24,43 @@
     <nav>
       <ul class="topbar">
         <li><img src="images/logo.png"></li>
-        <li id="login-button" class="logged-out"><a href="#">Login</a></li>
+        <!-- <li id="login-button" class="logged-out"><a href="#">Login</a></li>
         <li id="signup-button" class="logged-out"><a href="#">Signup</a></li>
         <li class="logged-in">Hello, <span class="username"></span></li>
-        <li class="logged-in logout-link"><a href="#">Logout</a></li>
+        <li class="logged-in logout-link"><a href="#">Logout</a></li> -->
       </ul>
     </nav>
-
-    <div class="callout primary">
-      <h3>Add Club</h3>
-      <form id="club" action="/clubs" method="post">
-        <input id="name" type="text" name="name" placeholder="Name">
-        <input id="description" type="text" name="description" placeholder="Description">
-        <input id="image" type="text" name="image" placeholder="Image">
-        <input id="places-input" type="text" name="address" placeholder="Address">
-        <input id="bookable" type="text" name="bookable" placeholder="Bookable?">
-        <input class="button form-submit close-reveal-modal" type="submit" value="Add Club" data-close>
-      </form>
-    </div>
-
 
     <main>
       <div id="layout" class="pure-g">
         <div class="sidebar pure-u-1 pure-u-md-3-8">
+        <a href="#" id="add-club">+</a>
+          <div class="tile club-form">
+            <h3>Add Bar</h3>
+            <form class="pure-form pure-form-aligned" id="club" action="/clubs" method="post">
+              <fieldset>
+                <div class="pure-control-group">
+                  <label for="name">Name</label>
+                  <input id="name" type="text" name="name" placeholder="Name">
+                </div>
+                <div class="pure-control-group">
+                  <label for="Description">Description</label>
+                  <input id="description" type="text" name="description" placeholder="Description">
+                </div>
+                <div class="pure-control-group">
+                  <label for="email">Address</label>
+                  <input id="places-input" type="text" name="address" placeholder="Address">
+                </div>
+                <div class="pure-control-group">
+                  <label for="email">Bookable</label>
+                  <input id="bookable" type="text" name="bookable" placeholder="Bookable?">
+                </div>
+                <div class="pure-controls">
+                  <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
           <div class="tile">
             <h1>Bar Kick</h1>
             <h2>127 Shoreditch High Street, London E1 6JE</h2>

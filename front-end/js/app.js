@@ -1,5 +1,6 @@
 $(document).ready(function(){
   googleMap.initialize();
+  $('#add-club').on("click", googleMap.toggleClubForm);
   $('form#club').on('submit', googleMap.addNewClub);
 });
 
@@ -95,6 +96,10 @@ googleMap.addClubs = function(){
       }(club, index));
     });
   });
+}
+
+googleMap.toggleClubForm = function(){
+  $('.club-form').slideToggle("slow");
 }
 
 googleMap.addClub = function(club, index) {

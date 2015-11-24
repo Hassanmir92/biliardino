@@ -56,6 +56,14 @@ body {
   overflow: scroll;
 }
 
+.sidebar h3 {
+  font-size: 35px;
+  letter-spacing: -2px;
+  color: #333;
+  font-weight: 600;
+  text-align: justify;
+}
+
 img.first {
   position: absolute;
   top: 500px;
@@ -134,4 +142,12 @@ img.second {
 
 .toolbar img {
   margin: 5px;
+}
+
+#add-club {
+  color: black;
+}
+
+.club-form {
+  display: none;
 }
