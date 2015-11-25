@@ -65,7 +65,10 @@ googleMap.addNewClub = function(){
     name: $('form#club #name').val(),
     description: $('form#club #description').val(),
     image: $('form#club #image').val(),
+    website: $('form#club #website').val(),
+    numberOfTables: $('form#club #numberOfTables').val(),
     bookable: $('form#club #bookable').val(),
+    address: $('form#club #places-input').val(),
     lng: googleMap.place.geometry.location.lng(),
     lat: googleMap.place.geometry.location.lat()
   }
