@@ -157,7 +157,7 @@ img.second {
   border-radius: 5px;
 }
 
-.toolbar button.booking {
+.toolbar button.booking_yes {
   background: linear-gradient(to top right, #55AA55, #88CC88);
   border: 0;
   padding: 5px 15px;
