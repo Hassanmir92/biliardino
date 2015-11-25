@@ -5,7 +5,7 @@ var clubSchema = new mongoose.Schema({
   name: { type: String },
   description: { type: String },
   image: { type: String },
-  numberOfTables: Number,
+  numberOfTables: String,
   address: String,
   website: String,
   lat: Number,

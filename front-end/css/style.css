@@ -157,8 +157,21 @@ img.second {
   border-radius: 5px;
 }
 
-.toolbar button.booking {
+.toolbar button.booking_yes {
   background: linear-gradient(to top right, #55AA55, #88CC88);
+  border: 0;
+  padding: 5px 15px;
+  font-size: 16px;
+  font-weight: 800;
+  outline: none;
+  cursor: default;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.toolbar button.booking_no {
+  text-decoration: line-through;
+  background: red;
   border: 0;
   padding: 5px 15px;
   font-size: 16px;
