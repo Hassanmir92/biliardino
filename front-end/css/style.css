@@ -169,6 +169,19 @@ img.second {
   border-radius: 5px;
 }
 
+.toolbar button.booking_no {
+  text-decoration: line-through;
+  background: red;
+  border: 0;
+  padding: 5px 15px;
+  font-size: 16px;
+  font-weight: 800;
+  outline: none;
+  cursor: default;
+  color: #fff;
+  border-radius: 5px;
+}
+
 .toolbar button.website {
   border: 0;
   background: transparent;
@@ -196,6 +209,7 @@ img.second {
 
 .club-form {
   display: none;
+  width: 368px;
 }
 
 /*------------------------------------------------*/

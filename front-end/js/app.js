@@ -9,6 +9,7 @@ var marker;
 var googleMap = googleMap || {};
 
 googleMap.initialize = function() {
+  googleMap.indexClub();
 
   var mapCanvas = document.getElementById('map');
   var center = new google.maps.LatLng(51.517557, -0.095624);
@@ -36,7 +37,6 @@ googleMap.initialize = function() {
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
     // infowindow.close();
     googleMap.place = autocomplete.getPlace();
-    // console.log(googleMap.place.photos[0].getUrl({ 'maxWidth': 500, 'maxHeight': 500 }));
     if (!googleMap.place.geometry) {
       return;
     }
@@ -48,7 +48,6 @@ googleMap.initialize = function() {
     }
   });
 
-  // Center the map once an info window has been opened
   google.maps.event.addDomListener(window, 'resize', function() {
     window.map.setCenter(center);
   });
@@ -64,8 +63,8 @@ googleMap.addNewClub = function(){
   var data   = {
     name: $('form#club #name').val(),
     description: $('form#club #description').val(),
-    image: $('form#club #image').val(),
-    website: $('form#club #website').val(),
+    image: googleMap.place.photos[0].getUrl({ 'maxWidth': 500, 'maxHeight': 500 }),
+    website: googleMap.place.website,
     numberOfTables: $('form#club #numberOfTables').val(),
     bookable: $('form#club #bookable').val(),
     address: $('form#club #places-input').val(),
@@ -79,9 +78,27 @@ googleMap.addNewClub = function(){
     url: url,
     data: data
   }).done(function(data){
+    $('.all-clubs').html('');
+    googleMap.indexClub();
     console.log(data)
     googleMap.addClubs(data);
+    googleMap.toggleClubForm();
   });
+}
+
+googleMap.indexClub = function(){
+  $.ajax({
+    method: "GET",
+    url: "http://localhost:3000/api/clubs"
+  }).done(function(data){
+    $.each(data.clubs, function(index, club){
+      googleMap.showClub(club)
+    })
+  })
+}
+
+googleMap.showClub = function(club){
+  $('.all-clubs').append("<div class='tile'><h1>"+club.name+"</h1><h2>"+club.address+"</h2><div class='toolbar'><button class='tables'>"+club.numberOfTables+"</button><button class='booking_"+club.bookable+"'>Bookable</button><button class='website'>"+club.website+"</button><img src='images/search.png' width='25'></div><img src='"+club.image+"' width='412'><hr><p>"+club.description+"</p></div>")
 }
 
 googleMap.addClubs = function(){
