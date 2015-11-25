@@ -50,9 +50,9 @@ body {
 .sidebar {
   background: #fafafa;
   color: #222;
-  border-right: 25px solid #a4e4c7;
+  border-right: 25px solid #edeeee;
   height: -webkit-calc(100% - 65px);
-  max-height: 80vh;
+  height: 90vh;
   overflow: scroll;
 }
 
@@ -77,11 +77,11 @@ img.second {
 }
 
 .content{
-  max-height: 80vh;
+  max-height: 90vh;
 }
 
 #map {
-  height: 80vh;
+  height: 90vh;
 }
 
 .tile {
@@ -129,7 +129,8 @@ img.second {
 }
 
 .tile img {
-  border-radius: 2px;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .tile hr {
@@ -137,11 +138,56 @@ img.second {
   margin-top: -1px;
   height: 1px;
   background-color: #c0c8c9;
-  background-image: -webkit-linear-gradient(0deg, #fff, #c0c8c9, #fff);
+  background-image: -webkit-linear-gradient(#fff, #c0c8c9);
+}
+
+.toolbar {
+  margin: -5px 0px 5px 0px;
+}
+
+.toolbar button.tables {
+  background: linear-gradient(to top right, #2D4A8C, #46609C);
+  border: 1px solid #6C83B7;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: 800;
+  outline: none;
+  cursor: default;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.toolbar button.booking {
+  background: linear-gradient(to top right, #55AA55, #88CC88);
+  border: 0;
+  padding: 5px 15px;
+  font-size: 16px;
+  font-weight: 800;
+  outline: none;
+  cursor: default;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.toolbar button.website {
+  border: 0;
+  background: transparent;
+  padding: 5px 15px;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  cursor: pointer;
+  color: #333;
+  border-radius: 5px;
+}
+
+.toolbar button.website:hover {
+  text-decoration: underline;
 }
 
 .toolbar img {
-  margin: 5px;
+  float: right;
+  cursor: pointer;
 }
 
 #add-club {
