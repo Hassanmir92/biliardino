@@ -1,6 +1,6 @@
 $(document).ready(function(){
   googleMap.initialize();
-  $('#add-club').on("click", googleMap.toggleClubForm);
+  $('.add-club').on("click", googleMap.toggleClubForm);
   $('form#club').on('submit', googleMap.addNewClub);
 });
 

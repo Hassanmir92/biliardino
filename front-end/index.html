@@ -34,25 +34,28 @@
     <main>
       <div id="layout" class="pure-g">
         <div class="sidebar pure-u-1 pure-u-md-3-8">
-          <a href="#" id="add-club">+</a>
+          <div class="add-club">
+            <img src="images/plus.png" id="add-club" width="20">
+            <br>
+            <label>Add Bar</label>
+          </div>
           <div class="tile club-form">
-            <h3>Add Bar</h3>
             <form class="pure-form pure-form-aligned" id="club" action="/clubs" method="post">
               <fieldset>
                 <div class="pure-control-group">
-                  <label for="name">Name</label>
+                  <label for="name">Name</label><br>
                   <input id="name" type="text" name="name" placeholder="Name">
                 </div>
                 <div class="pure-control-group">
-                  <label for="Description">Description</label>
+                  <label for="Description">Description</label><br>
                   <input id="description" type="text" name="description" placeholder="Description">
                 </div>
                 <div class="pure-control-group">
-                  <label for="email">Address</label>
+                  <label for="email">Address</label><br>
                   <input id="places-input" type="text" name="address" placeholder="Address">
                 </div>
                 <div class="pure-control-group">
-                  <label for="email">Bookable</label>
+                  <label for="email">Bookable</label><br>
                   <input id="bookable" type="text" name="bookable" placeholder="Bookable?">
                 </div>
                 <div class="pure-controls">

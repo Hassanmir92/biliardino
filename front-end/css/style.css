@@ -197,3 +197,38 @@ img.second {
 .club-form {
   display: none;
 }
+
+/*------------------------------------------------*/
+
+.add-club {
+  background: none;
+  padding: 20px;
+  cursor: pointer;
+}
+
+/*.add-club:hover {
+  background: #88CC88;
+  transition: background 1s ease-out;
+}*/
+
+.add-club label {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+fieldset {
+  text-align: center;
+  margin: 0 auto;
+}
+
+fieldset input {
+  margin-bottom: 10px;
+}
+
+.pure-form-aligned .pure-control-group label {
+  text-align: center;
+}
+
+.pure-form-aligned .pure-controls {
+  margin: 0 auto;
+}
