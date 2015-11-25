@@ -48,7 +48,6 @@ googleMap.initialize = function() {
     }
   });
 
-  // Center the map once an info window has been opened
   google.maps.event.addDomListener(window, 'resize', function() {
     window.map.setCenter(center);
   });
