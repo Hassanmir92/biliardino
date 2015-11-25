@@ -248,7 +248,6 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
-  overflow: hidden;
 }
 
 main {
@@ -285,6 +284,7 @@ div.container {
   color: #fff;
   width: 30%;
   height: 100vh;
+  overflow: scroll;
 }
 
 nav {
@@ -316,6 +316,7 @@ div.container a {
 div.content {
   width: 300px;
   margin-top: 30px;
+  overflow: scroll;
 }
 
 h1 {
