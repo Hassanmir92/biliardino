@@ -18,6 +18,7 @@
   <script type="text/javascript" src="./js/login.js"></script>
   <script type="text/javascript" src="./js/app.js"></script>
   <script type="text/javascript" src="./js/avgrund.js"></script>
+  <script type="text/javascript" src="./js/indexClub.js"></script>
 </head>
 <body>
   <div class="blur">
@@ -34,25 +35,40 @@
     <main>
       <div id="layout" class="pure-g">
         <div class="sidebar pure-u-1 pure-u-md-3-8">
-        <a href="#" id="add-club">+</a>
+          <div class="add-club">
+            <img src="images/plus.png" id="add-club" width="20">
+            <br>
+            <label>Add Bar</label>
+          </div>
           <div class="tile club-form">
-            <h3>Add Bar</h3>
             <form class="pure-form pure-form-aligned" id="club" action="/clubs" method="post">
               <fieldset>
                 <div class="pure-control-group">
-                  <label for="name">Name</label>
+                  <label for="name">Name</label><br>
                   <input id="name" type="text" name="name" placeholder="Name">
                 </div>
                 <div class="pure-control-group">
-                  <label for="Description">Description</label>
+                  <label for="Description">Description</label><br>
                   <input id="description" type="text" name="description" placeholder="Description">
                 </div>
                 <div class="pure-control-group">
-                  <label for="email">Address</label>
+                  <label for="NumberOfTables">Number of tables</label><br>
+                  <input id="NumberOfTables" type="text" name="NumberOfTables" placeholder="Number of tables">
+                </div>
+                <div class="pure-control-group">
+                  <label for="image">Image Link</label><br>
+                  <input id="image" type="text" name="image" placeholder="Image Link">
+                </div>
+                <div class="pure-control-group">
+                  <label for="website">Website</label><br>
+                  <input id="website" type="text" name="website" placeholder="Website Link">
+                </div>
+                <div class="pure-control-group">
+                  <label for="address">Address</label><br>
                   <input id="places-input" type="text" name="address" placeholder="Address">
                 </div>
                 <div class="pure-control-group">
-                  <label for="email">Bookable</label>
+                  <label for="bookable">Bookable</label><br>
                   <input id="bookable" type="text" name="bookable" placeholder="Bookable?">
                 </div>
                 <div class="pure-controls">
@@ -60,39 +76,6 @@
                 </div>
               </fieldset>
             </form>
-          </div>
-          <div class="tile">
-            <h1>Bar Kick</h1>
-            <h2>127 Shoreditch High Street, London E1 6JE</h2>
-            <img src="http://4.bp.blogspot.com/-NcwbGu3QaTU/TjHU-9vSZtI/AAAAAAAAHuk/9C5G322-yXM/s1600/bar-%20kick-0836.jpg" width="412">
-            <div class="toolbar">
-              <img src="http://megaicons.net/static/img/icons_title/8/178/title/numbers-9-icon.png" width="30">
-              <img src="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-round/700/011_yes-128.png" width="30">
-            </div>
-            <hr>
-            <p>Continental-style table-football café with René Pierre tables.</p>
-          </div>
-          <div class="tile">
-            <h1>Bar Kick</h1>
-            <h2>127 Shoreditch High Street, London E1 6JE</h2>
-            <img src="http://4.bp.blogspot.com/-NcwbGu3QaTU/TjHU-9vSZtI/AAAAAAAAHuk/9C5G322-yXM/s1600/bar-%20kick-0836.jpg" width="412">
-            <div class="toolbar">
-              <img src="http://megaicons.net/static/img/icons_title/8/178/title/numbers-9-icon.png" width="30">
-              <img src="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-round/700/011_yes-128.png" width="30">
-            </div>
-            <hr>
-            <p>Continental-style table-football café with René Pierre tables.</p>
-          </div>
-          <div class="tile">
-            <h1>Bar Kick</h1>
-            <h2>127 Shoreditch High Street, London E1 6JE</h2>
-            <img src="http://4.bp.blogspot.com/-NcwbGu3QaTU/TjHU-9vSZtI/AAAAAAAAHuk/9C5G322-yXM/s1600/bar-%20kick-0836.jpg" width="412">
-            <div class="toolbar">
-              <img src="http://megaicons.net/static/img/icons_title/8/178/title/numbers-9-icon.png" width="30">
-              <img src="https://cdn0.iconfinder.com/data/icons/basic-ui-elements-round/700/011_yes-128.png" width="30">
-            </div>
-            <hr>
-            <p>Continental-style table-football café with René Pierre tables.</p>
           </div>
         </div>
         <div class="content pure-u-1 pure-u-md-5-8">

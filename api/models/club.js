@@ -11,7 +11,7 @@ var clubSchema = new mongoose.Schema({
   lat: Number,
   lng: Number,
   votes: [Vote.schema],
-  bookable: Boolean,
+  bookable: String,
   approved: Boolean
 });
 
