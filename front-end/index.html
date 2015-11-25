@@ -4,11 +4,9 @@
   <meta charset="UTF-8">
   <title>Biliardino</title>
   <!-- CSS -->
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="./css/vendor/avgrund.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
 
   <!-- JS -->
   <script type="text/javascript" src="./js/mapStyle.js"></script>
@@ -19,22 +17,17 @@
   <script type="text/javascript" src="./js/indexClub.js"></script>
   <script type="text/javascript" src="./js/app.js"></script>
   <script type="text/javascript" src="./js/avgrund.js"></script>
+  <script type="text/javascript" src="./js/sidebar.js"></script>
 </head>
 <body>
-  <div class="blur">
-    <nav>
-      <ul class="topbar">
-        <li><img src="images/logo.png"></li>
-        <!-- <li id="login-button" class="logged-out"><a href="#">Login</a></li>
-        <li id="signup-button" class="logged-out"><a href="#">Signup</a></li>
-        <li class="logged-in">Hello, <span class="username"></span></li>
-        <li class="logged-in logout-link"><a href="#">Logout</a></li> -->
-      </ul>
-    </nav>
-
-    <main>
-      <div id="layout" class="pure-g">
-        <div class="sidebar pure-u-1 pure-u-md-3-8">
+  <main class="hidden">
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="#"><img class="menu" src="images/back.png" width="40"></a></li>
+        </ul>
+      </nav>
+      <div class="content">
           <div class="add-club">
             <img src="images/plus.png" id="add-club" width="20">
             <br>
@@ -76,11 +69,9 @@
           <div class="all-clubs">
           </div>
         </div>
-        <div class="content pure-u-1 pure-u-md-5-8">
-          <div id="map"></div>
-        </div>
-      </div>
-    </main>
-  </div>
+    </div>
+    <div class="sidebar"></div>
+  </main>
+  <div id="map"></div>
 </body>
 </html>
