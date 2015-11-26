@@ -271,7 +271,7 @@ div.sidebar {
   position: absolute;
   background: #2E4172;
   opacity: 0.8;
-  width: 30%;
+  width: 385px;
   height: 100vh;
 }
 
@@ -282,13 +282,16 @@ div.container {
   position: absolute;
   opacity: 1;
   color: #fff;
-  width: 30%;
+  width: 385px;
   height: 100vh;
   overflow: scroll;
 }
 
 nav {
   height: 40px;
+  position: fixed;
+  width: 365px;
+  z-index: -1;
 }
 
 ul {
@@ -300,7 +303,7 @@ li {
   list-style: none;
 }
 
-div.container a {
+img.menu {
   float: right;
 }
 
@@ -315,21 +318,40 @@ div.container a {
 
 div.content {
   width: 300px;
-  margin-top: 30px;
+  margin-top: 10px;
   overflow: scroll;
 }
 
+h1, h2 {
+  margin: 0;
+}
+
 h1 {
-  font-size: 40px;
-  font-weight: 400;
-  letter-spacing: -2px;
+  font-size: 30px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 15px;
 }
 
 p {
-  margin-top: -20px;
+  margin-top: 15px;
   font-size: 15px;
   font-weight: 300;
 }
+
+a:link, a:visited, a:hover, a:active {
+  color: white;
+  text-decoration: none;
+}
+
+/*google logo position*/
 
 #map .gm-style-cc {
   display: none;
@@ -338,4 +360,44 @@ p {
 .gm-style [style*="z-index: 1000000;"] {
   left: auto!important;
   right: 0!important;
+}
+
+.club-form {
+  display: none;
+}
+
+#logo {
+  position: absolute;
+  z-index: 0.5;
+  top: 0;
+  right: 20px;
+  width: 300px;
+  margin: 20px auto;
+}
+
+.tile hr {
+  margin: 15px 0 25px 0;
+}
+
+div.club-image {
+  height: 300px;
+  width: 300px;
+  background-position: center;
+  background-size: cover;
+}
+
+div.toolbar-icon {
+  border: 2px solid white;
+  padding: 5px 10px;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+div.add-club {
+  margin-bottom: 20px;
+}
+
+div.booking_no {
+  text-decoration: line-through;
 }

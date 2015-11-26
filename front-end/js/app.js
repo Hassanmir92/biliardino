@@ -25,7 +25,7 @@ googleMap.initialize = function() {
     zoomControl: true,
     zoomControlOptions: {
       style: google.maps.ZoomControlStyle.SMALL,
-      position: google.maps.ControlPosition.RIGHT_TOP
+      position: google.maps.ControlPosition.RIGHT_CENTER
     } 
   }
 
@@ -99,7 +99,7 @@ googleMap.indexClub = function(){
 }
 
 googleMap.showClub = function(club){
-  $('.all-clubs').append("<div class='tile'><h1>"+club.name+"</h1><h2>"+club.address+"</h2><div class='toolbar'><button class='tables'>"+club.numberOfTables+"</button><button class='booking_"+club.bookable+"'>Bookable</button><button class='website'>"+club.website+"</button><img src='images/search.png' width='25'></div><img src='"+club.image+"' width='412'><hr><p>"+club.description+"</p></div>")
+  $('.all-clubs').append("<div class='tile'><a href='"+club.website+"'><h1>"+club.name+"</h1></a><h2>"+club.address+"</h2><div class='toolbar'><div class='toolbar-icon tables'>"+club.numberOfTables+"</div><div class='toolbar-icon booking_"+club.bookable+"'>Bookable</div><div class='club-image' style='background-image: url("+club.image+")'></div><p>"+club.description+"</p></div><hr>")
 }
 
 googleMap.addClubs = function(){
@@ -130,7 +130,7 @@ googleMap.addClub = function(club, index) {
     map: window.map,
     title: club.name,
     // animation: google.maps.Animation.DROP,
-    // icon: "http://i.imgur.com/mKPqLrX.png"
+    icon: "http://i.imgur.com/zAPrWqA.png"
   });
   
   // Setting up info window based on json bar (name, image, description, facebook) data
