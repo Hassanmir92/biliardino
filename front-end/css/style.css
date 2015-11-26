@@ -1,4 +1,4 @@
-* {
+/** {
   box-sizing: border-box;
 }
 
@@ -78,10 +78,6 @@ img.second {
 
 .content{
   max-height: 90vh;
-}
-
-#map {
-  height: 90vh;
 }
 
 .tile {
@@ -212,18 +208,11 @@ img.second {
   width: 368px;
 }
 
-/*------------------------------------------------*/
-
 .add-club {
   background: none;
   padding: 20px;
   cursor: pointer;
 }
-
-/*.add-club:hover {
-  background: #88CC88;
-  transition: background 1s ease-out;
-}*/
 
 .add-club label {
   font-size: 15px;
@@ -245,4 +234,108 @@ fieldset input {
 
 .pure-form-aligned .pure-controls {
   margin: 0 auto;
+}*/
+
+/*---------------------------------------*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+main {
+  position: relative;
+}
+
+main.hidden {
+  left: -320px;
+}
+
+div#map {
+  z-index: 0;
+  height: 100vh;
+}
+
+div.sidebar {
+  -webkit-box-shadow: 4px 4px 10px 0px rgba(50, 50, 50, 0.8);
+  -moz-box-shadow:    4px 4px 10px 0px rgba(50, 50, 50, 0.8);
+  box-shadow:         4px 4px 10px 0px rgba(50, 50, 50, 0.8);
+  z-index: 1;
+  position: absolute;
+  background: #2E4172;
+  opacity: 0.8;
+  width: 30%;
+  height: 100vh;
+}
+
+div.container {
+  z-index: 2;
+  text-align: left;
+  padding: 10px;
+  position: absolute;
+  opacity: 1;
+  color: #fff;
+  width: 30%;
+  height: 100vh;
+  overflow: scroll;
+}
+
+nav {
+  height: 40px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+div.container a {
+  float: right;
+}
+
+.menu-hidden {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+div.content {
+  width: 300px;
+  margin-top: 30px;
+  overflow: scroll;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+
+p {
+  margin-top: -20px;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+#map .gm-style-cc {
+  display: none;
+}
+
+.gm-style [style*="z-index: 1000000;"] {
+  left: auto!important;
+  right: 0!important;
 }
