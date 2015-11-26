@@ -37,6 +37,7 @@ googleMap.initialize = function() {
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
     // infowindow.close();
     googleMap.place = autocomplete.getPlace();
+    console.log(googleMap.place)
     if (!googleMap.place.geometry) {
       return;
     }
