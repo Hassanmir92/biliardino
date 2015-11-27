@@ -141,7 +141,7 @@ biliardino.addClub = function(club, index) {
 biliardino.markerClick = function(marker, club) {
   if(infowindow) infowindow.close();
 
-  $('.container').scrollTo($('.scroll_'+club._id), 800)
+  $('.container').scrollTo($('.scroll_'+club._id), 1000)
 
   infowindow = new google.maps.InfoWindow({
     content:'<div class="infowindow"><h3>'+ club.name +'</h3><h4>'+ club.address +'</h4></div>'
