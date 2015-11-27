@@ -111,7 +111,6 @@ biliardino.addClubs = function(){
     method: "get",
     url: 'http://localhost:3000/api/clubs'
   }).done(function(data){
-    console.log("DATA", data);
     $.each(data.clubs, function(index, club){
       biliardino.addClub(club);
       biliardino.clearForm();
@@ -141,7 +140,7 @@ biliardino.addClub = function(club, index) {
 biliardino.markerClick = function(marker, club) {
   if(infowindow) infowindow.close();
 
-  $('.container').scrollTo($('.scroll_'+club._id), 800)
+  $('.container').scrollTo($('.scroll_'+club._id), 1000)
 
   infowindow = new google.maps.InfoWindow({
     content:'<div class="infowindow"><h3>'+ club.name +'</h3><h4>'+ club.address +'</h4></div>'
