@@ -111,7 +111,6 @@ biliardino.addClubs = function(){
     method: "get",
     url: 'http://localhost:3000/api/clubs'
   }).done(function(data){
-    console.log("DATA", data);
     $.each(data.clubs, function(index, club){
       biliardino.addClub(club);
       biliardino.clearForm();
