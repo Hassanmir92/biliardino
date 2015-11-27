@@ -14,7 +14,6 @@
   <script type="text/javascript" src="./js/vendor/jquery.avgrund.js"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;libraries=places"></script>
   <script type="text/javascript" src="./js/login.js"></script>
-  <script type="text/javascript" src="./js/indexClub.js"></script>
   <script type="text/javascript" src="./js/app.js"></script>
   <script type="text/javascript" src="./js/avgrund.js"></script>
   <script type="text/javascript" src="./js/sidebar.js"></script>
@@ -33,35 +32,32 @@
           </div>
           <div class="tile club-form">
             <form class="pure-form pure-form-aligned" id="club" action="/clubs" method="post">
-              <fieldset>
-                <div class="pure-control-group">
+                <div>
                   <label for="name">Name</label><br>
-                  <input id="name" type="text" name="name" placeholder="Name">
+                  <input id="name" type="text" name="name">
                 </div>
-                <div class="pure-control-group">
-                  <label for="Description">Description</label><br>
-                  <input id="description" type="text" name="description" placeholder="Description">
-                </div>
-                <div class="pure-control-group">
-                  <label for="numberOfTables">Number of tables</label><br>
-                  <input id="numberOfTables" type="text" name="numberOfTables" placeholder="Number of tables">
-                </div>
-                <div class="pure-control-group">
-                  <label for="website">Website</label><br>
-                  <input id="website" type="text" name="website" placeholder="Website Link">
-                </div>
-                <div class="pure-control-group">
+                <div>
                   <label for="address">Address</label><br>
-                  <input id="places-input" type="text" name="address" placeholder="Address">
+                  <input id="places-input" type="text" name="address">
                 </div>
-                <div class="pure-control-group">
+                <div>
+                  <label for="Description">Description</label><br>
+                  <input id="description" type="text" name="description">
+                </div>
+                <div>
+                  <label for="numberOfTables">Number of tables</label><br>
+                  <input id="numberOfTables" type="text" name="numberOfTables">
+                </div>
+                <div>
                   <label for="bookable">Bookable</label><br>
-                  <input id="bookable" type="text" name="bookable" placeholder="Bookable?">
+                  <select name="bookable" id="bookable">
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                  </select>
                 </div>
                 <div class="pure-controls">
                   <button type="submit" class="pure-button pure-button-primary">Submit</button>
                 </div>
-              </fieldset>
             </form>
           </div>
           <div class="all-clubs">

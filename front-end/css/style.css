@@ -340,6 +340,20 @@ h2 {
   margin-bottom: 15px;
 }
 
+h3 {
+  font-size: 18px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin: 0;
+}
+
+h4 {
+  font-size: 14px;
+  font-weight: 300;
+  margin: 0;
+}
+
 p {
   margin-top: 15px;
   font-size: 15px;
@@ -400,4 +414,54 @@ div.add-club {
 
 div.booking_no {
   text-decoration: line-through;
+}
+
+/*form*/
+
+form {
+  margin-bottom: 20px;
+}
+
+button[type=submit] {
+  border: 2px solid white;
+  padding: 5px 10px;
+  background-color: #2E4172;
+  color: white;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  margin-top: 10px;
+  font-size: 16px;
+  width: 300px;
+}
+
+input[type=text] {
+  border: 2px solid white;
+  padding: 5px 10px;
+  background-color: white;
+  margin: 5px 0 10px 0;
+  font-size: 16px;
+  width: 300px;
+}
+
+select {
+  border: 2px solid white;
+  padding: 5px 10px;
+  background-color: white;
+  font-size: 16px;
+  margin: 5px 0 10px 0;
+}
+
+label {
+  font-size: 16px;
+}
+
+.infowindow {
+  text-align: center;
+  margin-left: 20px;
+}
+
+/*Gets rid of 'x' in map infowindow*/
+img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
+    display: none;
 }

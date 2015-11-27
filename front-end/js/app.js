@@ -99,7 +99,11 @@ googleMap.indexClub = function(){
 }
 
 googleMap.showClub = function(club){
-  $('.all-clubs').append("<div class='tile'><a href='"+club.website+"'><h1>"+club.name+"</h1></a><h2>"+club.address+"</h2><div class='toolbar'><div class='toolbar-icon tables'>"+club.numberOfTables+"</div><div class='toolbar-icon booking_"+club.bookable+"'>Bookable</div><div class='club-image' style='background-image: url("+club.image+")'></div><p>"+club.description+"</p></div><hr>")
+  $('.all-clubs').append("<div class='tile scroll_"+club._id+"'><a href='"+club.website+"'><h1>"+club.name+"</h1></a><h2>"+club.address+"</h2><div class='toolbar'><div class='toolbar-icon tables'>"+club.numberOfTables+"</div><div class='toolbar-icon booking_"+club.bookable+"'>Bookable</div><div class='club-image' style='background-image: url("+club.image+")'></div><p>"+club.description+"</p></div><hr>")
+}
+
+googleMap.clearForm = function(){
+  $('#club').trigger("reset");
 }
 
 googleMap.addClubs = function(){
@@ -115,6 +119,7 @@ googleMap.addClubs = function(){
           googleMap.addClub(club);
         }, (index+1) * 200);
       }(club, index));
+      googleMap.clearForm();
     });
   });
 }
@@ -142,19 +147,16 @@ googleMap.addClub = function(club, index) {
 
 googleMap.markerClick = function(marker, club) {
   if(infowindow) infowindow.close();
+  // console.log(club._id)
+  // console.log($('.scroll_'+club._id));
+  scroll();
+
+  function scroll(){
+    $('.container').animate({'scrollTop':$('.scroll_'+club._id).offset().top}, 1500);
+  }
 
   infowindow = new google.maps.InfoWindow({
-    content:'<h1>'+ club.name +'</h1>'
-    // '<div id="map_window">'+
-    // '<h2 id="map_title">' + bar.name + '</h2>'+
-    // '<div id="map_content">'+
-    // '<div class="bar_image" style="background-image: url('+ bar.image +')"></div>' +
-    // '<p id="map_address">' + bar.address + '</p>' +
-    // '<p id="map_description">' + bar.description + '</p>' +
-    // '<a href="https://citymapper.com/directions?endcoord='
-    // + bar.lat + ',' + bar.lng + '&endname=' + bar.name +'" target="_blank"><img class="citymapper" src="../images/custom-citymapper.png"></a>' +
-    // '</div>'+
-    // '</div>'
+    content:'<div class="infowindow"><h3>'+ club.name +'</h3><h4>'+ club.address +'</h4></div>'
   });
 
   window.map.setCenter(marker.getPosition());
