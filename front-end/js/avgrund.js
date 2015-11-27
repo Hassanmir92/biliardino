@@ -1,6 +1,6 @@
 $(function(){
-  $('#login-button').avgrund({
-    height: 350,
+  $('#super-secret').avgrund({
+    height: 202,
     showClose: true,
     holderClass: 'login',
     showCloseText: 'close',
