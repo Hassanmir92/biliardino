@@ -35,7 +35,6 @@ biliardino.initialize = function() {
   var input = (document.getElementById('places-input'));
   var autocomplete = new google.maps.places.Autocomplete(input);
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
-    // infowindow.close();
     biliardino.place = autocomplete.getPlace();
     console.log(biliardino.place)
     if (!biliardino.place.geometry) {
@@ -130,11 +129,9 @@ biliardino.addClub = function(club, index) {
     position: {lat: club.lat, lng: club.lng},
     map: window.map,
     title: club.name,
-    // animation: google.maps.Animation.DROP,
     icon: "http://i.imgur.com/zAPrWqA.png"
   });
   
-  // Setting up info window based on json bar (name, image, description, facebook) data
   // Adding click listener to open info window when marker is clicked
   marker.addListener('click', function(){
     biliardino.markerClick(marker, club);
