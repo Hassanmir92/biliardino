@@ -12,10 +12,10 @@ googleMap.initialize = function() {
   googleMap.indexClub();
 
   var mapCanvas = document.getElementById('map');
-  var center = new google.maps.LatLng(51.517557, -0.095624);
+  var center = new google.maps.LatLng(51.522857, -0.103897);
   var mapOptions = {
     center: center,
-    zoom: 13,
+    zoom: 12,
     styles: mapStyle,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     mapMaker: true,
@@ -114,11 +114,12 @@ googleMap.addClubs = function(){
   }).done(function(data){
     console.log("DATA", data);
     $.each(data.clubs, function(index, club){
-      (function(){
-        setTimeout(function() {
-          googleMap.addClub(club);
-        }, (index+1) * 200);
-      }(club, index));
+      googleMap.addClub(club);
+      // (function(){
+      //   setTimeout(function() {
+      //     googleMap.addClub(club);
+      //   }, (index+1) * 200);
+      // }(club, index));
       googleMap.clearForm();
     });
   });

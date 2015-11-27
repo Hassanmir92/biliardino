@@ -60,7 +60,9 @@
   "website": "http://stapletontavern.com",
   "numberOfTables": "1",
   "address": "2-4 Crouch Hill, London N4 4AU",
-  "bookable": "no"
+  "bookable": "no",
+  "lat": 51.570804,
+  "lng": -0.115472
 },
 {
   "name": "Camino Blackfriars",
@@ -69,7 +71,9 @@
   "website": "http://www.camino.uk.com/restaurants/blackfriars",
   "numberOfTables": "1",
   "address": "33 Blackfriars Lane, London EC4V 6EP",
-  "bookable": "no"
+  "bookable": "no",
+  "lat": 51.513112,
+  "lng": -0.103193
 },
 {
   "name": "The Clapton Hart",
@@ -78,7 +82,9 @@
   "website": "http://claptonhart.com",
   "numberOfTables": "1",
   "address": "231 Lower Clapton Rd, London E5 8EG",
-  "bookable": "no"
+  "bookable": "no",
+  "lat": 51.557702,
+  "lng": -0.056173
 },
 {
   "name": "The Artisan Of Clerkenwell",
@@ -87,7 +93,9 @@
   "website": "http://www.theartisanofclerkenwell.com",
   "numberOfTables": "1",
   "address": "53 St John's Square, London EC1V 4JL",
-  "bookable": "no"
+  "bookable": "no",
+  "lat": 51.522857,
+  "lng": -0.103897
 },
 {
   "name": "The Victoria Inn",
@@ -96,7 +104,9 @@
   "website": "http://www.victoriainnpeckham.com",
   "numberOfTables": "1",
   "address": "77-79 Choumert Rd, London SE15 4AR",
-  "bookable": "no"
+  "bookable": "no",
+  "lat": 51.467556,
+  "lng": -0.071034
 },
 {
   "name": "Big Chill",
@@ -105,7 +115,9 @@
   "website": "http://wearebigchill.com/venues/bar",
   "numberOfTables": "1",
   "address": "91 Brick Lane, London E1 6QL",
-  "bookable": "no"
+  "bookable": "no",
+  "lat": 51.520347,
+  "lng": -0.073203
 },
 {
   "name": "Proud Camden",
@@ -114,7 +126,9 @@
   "website": "http://proudcamden.com",
   "numberOfTables": "1",
   "address": "The Horse Hospital, The Stables Market, Chalk Farm Rd, London NW1 8AH",
-  "bookable": "no"
+  "bookable": "no",
+  "lat": 51.542529,
+  "lng": -0.148428
 },
 {
   "name": "Grand Union Camden",
@@ -123,7 +137,9 @@
   "website": "http://www.grandunionbars.com/venues/camden",
   "numberOfTables": "1",
   "address": "102 - 104 Camden Road, London NW1 9EA",
-  "bookable": "no"
+  "bookable": "no",
+  "lat": 51.541405,
+  "lng": -0.138338
 },
 {
   "name": "Forest Tavern",
@@ -132,7 +148,9 @@
   "website": "http://foresttavern.com",
   "numberOfTables": "1",
   "address": "173 Forest Lane, London E7 9BB",
-  "bookable": "no"
+  "bookable": "no",
+  "lat": 51.549193,
+  "lng": 0.022241
 },
 {
   "name": "Queen of Hoxton",
@@ -141,7 +159,9 @@
   "website": "http://queenofhoxton.com",
   "numberOfTables": "1",
   "address": "1 Curtain Rd, London EC2A 3JX",
-  "bookable": "no"
+  "bookable": "no",
+  "lat": 51.522135,
+  "lng": -0.081224
 },
 {
   "name": "The Leconfield",
@@ -150,7 +170,9 @@
   "website": "http://www.theleconfieldpub.co.uk",
   "numberOfTables": "1",
   "address": "79 Green Lanes, London N16 9BU",
-  "bookable": "no"
+  "bookable": "no",
+  "lat": 51.553355,
+  "lng": -0.088334
 },
 {
   "name": "Ravensbourne Arms",
@@ -159,5 +181,7 @@
   "website": "http://ravensbournearms.com",
   "numberOfTables": "1",
   "address": "323 Lewisham High St, London SE13 6NR",
-  "bookable": "no"
+  "bookable": "no",
+  "lat": 51.455509,
+  "lng": -0.015246
 }]
