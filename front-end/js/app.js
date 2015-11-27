@@ -147,13 +147,8 @@ googleMap.addClub = function(club, index) {
 
 googleMap.markerClick = function(marker, club) {
   if(infowindow) infowindow.close();
-  // console.log(club._id)
-  // console.log($('.scroll_'+club._id));
-  scroll();
 
-  function scroll(){
-    $('.container').animate({'scrollTop':$('.scroll_'+club._id).offset().top}, 1500);
-  }
+  $('.container').animate({'scrollTop':$('.scroll_'+club._id).offset().top}, 1500);
 
   infowindow = new google.maps.InfoWindow({
     content:'<div class="infowindow"><h3>'+ club.name +'</h3><h4>'+ club.address +'</h4></div>'
