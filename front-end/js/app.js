@@ -147,6 +147,6 @@ biliardino.markerClick = function(marker, club) {
     content:'<div class="infowindow"><h3>'+ club.name +'</h3><h4>'+ club.address +'</h4></div>'
   });
 
-  window.map.setCenter(marker.getPosition());
+  window.map.panTo(marker.getPosition());
   infowindow.open(window.map, marker);
 };

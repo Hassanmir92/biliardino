@@ -1,243 +1,3 @@
-/** {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0 auto;
-  padding: 0;
-  -webkit-font-smoothing: antialiased;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
-}
-
-nav {
-  background: #444;
-  height: 70px;
-  text-align: center;
-}
-
-ul {
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  display: inline-block;
-  line-height: 60px;
-  padding: 5px
-}
-
-a {
-  text-decoration: none;
-  color: #f2f2f2;
-}
-
-.topbar .right {
-  float: right;
-}
-
-.topbar img {
-  width: 240px;
-}
-
-
-body {
-  -webkit-font-smoothing: antialiased;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
-  text-align: center;
-}
-
-.sidebar {
-  background: #fafafa;
-  color: #222;
-  border-right: 25px solid #edeeee;
-  height: -webkit-calc(100% - 65px);
-  height: 90vh;
-  overflow: scroll;
-}
-
-.sidebar h3 {
-  font-size: 35px;
-  letter-spacing: -2px;
-  color: #333;
-  font-weight: 600;
-  text-align: justify;
-}
-
-img.first {
-  position: absolute;
-  top: 500px;
-  left: 500px;
-}
-
-img.second {
-  position: absolute;
-  top: 120px;
-  left: 900px;
-}
-
-.content{
-  max-height: 90vh;
-}
-
-.tile {
-  margin: 15px;
-  text-align: justify;
-}
-
-.tile h1 {
-  font-size: 45px;
-  letter-spacing: -2px;
-  color: #333;
-  font-weight: 600;
-}
-
-.tile h2 {
-  font-size: 15px;
-  margin-top: -30px;
-  font-weight: 300;
-  font-style: italic;
-  color: #555;
-}
-
-.tile p {
-  margin-top: 5px;
-  text-align: left;
-  font-size: 14px;
-}
-
-.title img {
-  width: 410px;
-}
-
-.tile ul {
-  text-align: center;
-  margin: 0;
-  margin-top: -4px;
-  padding: 0;
-  height: 40px;
-}
-
-.tile ul li {
-  width: 45%;
-  line-height: 30px;
-  display: inline-block;
-}
-
-.tile img {
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.tile hr {
-  border: none;
-  margin-top: -1px;
-  height: 1px;
-  background-color: #c0c8c9;
-  background-image: -webkit-linear-gradient(#fff, #c0c8c9);
-}
-
-.toolbar {
-  margin: -5px 0px 5px 0px;
-}
-
-.toolbar button.tables {
-  background: linear-gradient(to top right, #2D4A8C, #46609C);
-  border: 1px solid #6C83B7;
-  padding: 5px 10px;
-  font-size: 16px;
-  font-weight: 800;
-  outline: none;
-  cursor: default;
-  color: #fff;
-  border-radius: 5px;
-}
-
-.toolbar button.booking_yes {
-  background: linear-gradient(to top right, #55AA55, #88CC88);
-  border: 0;
-  padding: 5px 15px;
-  font-size: 16px;
-  font-weight: 800;
-  outline: none;
-  cursor: default;
-  color: #fff;
-  border-radius: 5px;
-}
-
-.toolbar button.booking_no {
-  text-decoration: line-through;
-  background: red;
-  border: 0;
-  padding: 5px 15px;
-  font-size: 16px;
-  font-weight: 800;
-  outline: none;
-  cursor: default;
-  color: #fff;
-  border-radius: 5px;
-}
-
-.toolbar button.website {
-  border: 0;
-  background: transparent;
-  padding: 5px 15px;
-  font-size: 16px;
-  font-weight: 400;
-  outline: none;
-  cursor: pointer;
-  color: #333;
-  border-radius: 5px;
-}
-
-.toolbar button.website:hover {
-  text-decoration: underline;
-}
-
-.toolbar img {
-  float: right;
-  cursor: pointer;
-}
-
-#add-club {
-  color: black;
-}
-
-.club-form {
-  display: none;
-  width: 368px;
-}
-
-.add-club {
-  background: none;
-  padding: 20px;
-  cursor: pointer;
-}
-
-.add-club label {
-  font-size: 15px;
-  font-weight: 500;
-}
-
-fieldset {
-  text-align: center;
-  margin: 0 auto;
-}
-
-fieldset input {
-  margin-bottom: 10px;
-}
-
-.pure-form-aligned .pure-control-group label {
-  text-align: center;
-}
-
-.pure-form-aligned .pure-controls {
-  margin: 0 auto;
-}*/
-
-/*---------------------------------------*/
-
 * {
   box-sizing: border-box;
 }
@@ -269,7 +29,7 @@ div.sidebar {
   box-shadow:         4px 4px 10px 0px rgba(50, 50, 50, 0.8);
   z-index: 1;
   position: absolute;
-  background: #2E4172;
+  background: #338A2E;
   opacity: 0.8;
   width: 385px;
   height: 100vh;
@@ -337,7 +97,9 @@ h1 {
 h2 {
   font-size: 18px;
   font-weight: 300;
-  margin-bottom: 15px;
+  margin-top: -8px;
+  margin-bottom: 10px;
+  font-style: italic;
 }
 
 h3 {
@@ -355,7 +117,7 @@ h4 {
 }
 
 p {
-  margin-top: 15px;
+  margin-top: 10px;
   font-size: 15px;
   font-weight: 300;
 }
@@ -385,7 +147,7 @@ a:link, a:visited, a:hover, a:active {
   z-index: 0.5;
   top: 0;
   right: 20px;
-  width: 300px;
+  width: 170px;
   margin: 20px auto;
 }
 
@@ -396,12 +158,14 @@ a:link, a:visited, a:hover, a:active {
 div.club-image {
   height: 300px;
   width: 300px;
+  border-radius: 3px;
   background-position: center;
   background-size: cover;
 }
 
 div.toolbar-icon {
-  border: 2px solid white;
+  border: 1px solid white;
+  border-radius: 3px;
   padding: 5px 10px;
   display: inline-block;
   margin-right: 10px;
