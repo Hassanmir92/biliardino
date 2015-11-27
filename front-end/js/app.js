@@ -98,7 +98,7 @@ biliardino.indexClub = function(){
 }
 
 biliardino.showClub = function(club){
-  $('.all-clubs').append("<div class='tile scroll_"+club._id+"'><a href='"+club.website+"'><h1>"+club.name+"</h1></a><h2>"+club.address+"</h2><div class='toolbar'><div class='toolbar-icon tables'>"+club.numberOfTables+"</div><div class='toolbar-icon booking_"+club.bookable+"'>Bookable</div><div class='club-image' style='background-image: url("+club.image+")'></div><p>"+club.description+"</p></div><hr>")
+  $('.all-clubs').append("<div class='tile scroll_"+club._id+"'><a href='"+club.website+"' target='_blank'><h1>"+club.name+"</h1></a><h2>"+club.address+"</h2><div class='toolbar'><div class='toolbar-icon tables'>"+club.numberOfTables+"</div><a href='"+club.website+"' target='_blank'><div class='toolbar-icon booking_"+club.bookable+"'>Bookable</div></a><div class='club-image' style='background-image: url("+club.image+")'></div><p>"+club.description+"</p></div><hr>")
 }
 
 biliardino.clearForm = function(){

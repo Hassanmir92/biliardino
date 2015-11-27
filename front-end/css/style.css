@@ -476,6 +476,11 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
     display: none;
 }
 
+.login a {
+  color: black;
+  margin: 10px;
+}
+
 .login input[type=text], .login input[type=password]{
   border: 2px solid #2E4172;
   padding: 5px 10px;
@@ -486,7 +491,7 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
 }
 
 input[type=submit] {
-  border: 2px solid white;
+  border: 2px solid #2E4172;
   padding: 5px 10px;
   background-color: #2E4172;
   color: white;
@@ -496,4 +501,8 @@ input[type=submit] {
   margin-top: 10px;
   font-size: 16px;
   width: 100%;
+}
+
+input[type=submit]:focus {
+  outline:0;
 }

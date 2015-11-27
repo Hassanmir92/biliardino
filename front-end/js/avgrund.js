@@ -1,6 +1,6 @@
 $(function(){
   $('#super-secret').avgrund({
-    height: 202,
+    height: 224,
     showClose: true,
     holderClass: 'login',
     showCloseText: 'close',
