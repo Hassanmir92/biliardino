@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Biliardino</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" type="image/png" href="./images/favicon.ico"/>
   <!-- CSS -->
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic' rel='stylesheet' type='text/css'>
@@ -30,7 +31,9 @@
       </nav>
       <div class="content">
         <div class="add-club">
-          <img src="images/plus.png" id="add-club" width="20">
+          <img src="images/plus.png" class="logged-in" id="add-club" width="20">
+          <img src="images/logout.png" class="logged-in" id="logout-link" width="20">
+          <img src="images/locate.png" id="get-location" width="20">
         </div>
         <div class="tile club-form">
           <form class="pure-form pure-form-aligned" id="club" action="/clubs" method="post">
@@ -49,6 +52,18 @@
             <div>
               <label for="numberOfTables">Number of tables</label><br>
               <input id="numberOfTables" type="text" name="numberOfTables">
+            </div>
+            <div>
+              <input id="image" type="hidden" name="image">
+            </div>
+            <div>
+              <input id="website" type="hidden" name="website">
+            </div>
+            <div>
+              <input id="lat" type="hidden" name="lat">
+            </div>
+            <div>
+              <input id="lng" type="hidden" name="lng">
             </div>
             <div>
               <label for="bookable">Bookable</label><br>
@@ -71,6 +86,7 @@
   <div id="map">
   </div>
   <img id="logo" src="./images/logo-new.png">
-  <div id="super-secret"></div>
+  <div id="super-secret-login"></div>
+  <div id="super-secret-signup"></div>
 </body>
 </html>

@@ -14,12 +14,8 @@ function toggleSideBar(){
 
 function toggleSidebarImage(){
   if ($('main').hasClass('hidden')){
-    console.log("im in");
     $('img.menu').addClass('menu-hidden')
   } else {
     $('img.menu').removeClass('menu-hidden')
   }
 }
-
-
-

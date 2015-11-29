@@ -4,12 +4,12 @@ function initialize(){
   $("body").on("submit", 'form#login', submitForm);
   $("body").on("submit", 'form#signup', submitForm);
   $('form#signup').on('submit', submitForm);
-  $('.logout-link').on('click', logout);
+  $('#logout-link').on('click', logout);
   checkLoginState();
 }
 
 function currentUser(){
-  var url = 'http://localhost:3000/api/users/'+getUserId()
+  var url = 'https://biliardino-api.herokuapp.com/api/users/'+getUserId()
   ajaxRequest('get', url, null, function(data){
     $('.username').html(data.user.local.fullname)
   });
@@ -27,11 +27,10 @@ function submitForm(){
   event.preventDefault();
   hideErrors();
   var method = $(this).attr("method");
-  var url    = "http://localhost:3000/api"+ $(this).attr("action");
+  var url    = "https://biliardino-api.herokuapp.com/api"+ $(this).attr("action");
   var data   = $(this).serialize();
   data.lat = 51.520244
   data.lng = -0.072149
-  console.log(data)
 
   return ajaxRequest(method, url, data, authenticationSuccessful)
 }

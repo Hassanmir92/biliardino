@@ -1,7 +1,9 @@
 $(document).ready(function(){
   biliardino.initialize();
-  $('.add-club').on("click", biliardino.toggleClubForm);
+  $('#add-club').on("click", biliardino.toggleClubForm);
   $('form#club').on('submit', biliardino.addNewClub);
+  $('#get-location').on('click', biliardino.getLocation);
+  $("body").on("click", ".delete", biliardino.deleteClub);
 });
 
 var infowindow;
@@ -36,7 +38,15 @@ biliardino.initialize = function() {
   var autocomplete = new google.maps.places.Autocomplete(input);
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
     biliardino.place = autocomplete.getPlace();
-    console.log(biliardino.place)
+    // fill in hidden form fields
+    $('form#club #lat').val(biliardino.place.geometry.location.lat());
+    $('form#club #lng').val(biliardino.place.geometry.location.lng());
+    if (biliardino.place.photos) {
+      $('form#club #image').val(biliardino.place.photos[0].getUrl({ 'maxWidth': 500, 'maxHeight': 500 }));
+    }
+    if (biliardino.place.website) {
+      $('form#club #website').val(biliardino.place.website);
+    }
     if (!biliardino.place.geometry) {
       return;
     }
@@ -51,27 +61,39 @@ biliardino.initialize = function() {
   google.maps.event.addDomListener(window, 'resize', function() {
     window.map.setCenter(center);
   });
-
   biliardino.addClubs();
 }
 
+biliardino.getLocation = function() {
+  if (!biliardino.userLatlng) {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(biliardino.showPosition);
+    } else { 
+      console.log("Geolocation is not supported by this browser.");
+    }
+  }
+}
+
+biliardino.showPosition = function(position) {
+  biliardino.userLatlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+  map.setCenter(biliardino.userLatlng);
+  biliardino.addMyLocation();
+}
+
+biliardino.addMyLocation = function(){
+  var marker = new google.maps.Marker({
+    position: biliardino.userLatlng,
+    map: window.map,
+    animation: google.maps.Animation.DROP,
+    icon: "http://i.imgur.com/zAPrWqA.png"
+  });
+}
+
 biliardino.addNewClub = function(){
-  console.log(biliardino.place)
   event.preventDefault();
   var method = "post"
-  var url    = "http://localhost:3000/api/clubs"
-  var data   = {
-    name: $('form#club #name').val(),
-    description: $('form#club #description').val(),
-    image: biliardino.place.photos[0].getUrl({ 'maxWidth': 500, 'maxHeight': 500 }),
-    website: biliardino.place.website,
-    numberOfTables: $('form#club #numberOfTables').val(),
-    bookable: $('form#club #bookable').val(),
-    address: $('form#club #places-input').val(),
-    lng: biliardino.place.geometry.location.lng(),
-    lat: biliardino.place.geometry.location.lat()
-  }
-  console.log(data);
+  var url    = "https://biliardino-api.herokuapp.com/api/clubs"
+  var data   = $('form#club').serialize();
 
   $.ajax({
     method: method,
@@ -80,7 +102,6 @@ biliardino.addNewClub = function(){
   }).done(function(data){
     $('.all-clubs').html('');
     biliardino.indexClub();
-    console.log(data)
     biliardino.addClubs(data);
     biliardino.toggleClubForm();
   });
@@ -89,7 +110,7 @@ biliardino.addNewClub = function(){
 biliardino.indexClub = function(){
   $.ajax({
     method: "GET",
-    url: "http://localhost:3000/api/clubs"
+    url: "https://biliardino-api.herokuapp.com/api/clubs"
   }).done(function(data){
     $.each(data.clubs, function(index, club){
       biliardino.showClub(club)
@@ -98,7 +119,7 @@ biliardino.indexClub = function(){
 }
 
 biliardino.showClub = function(club){
-  $('.all-clubs').append("<div class='tile scroll_"+club._id+"'><a href='"+club.website+"' target='_blank'><h1>"+club.name+"</h1></a><h2>"+club.address+"</h2><div class='toolbar'><div class='toolbar-icon tables'>"+club.numberOfTables+"</div><a href='"+club.website+"' target='_blank'><div class='toolbar-icon booking_"+club.bookable+"'>Bookable</div></a><div class='club-image' style='background-image: url("+club.image+")'></div><p>"+club.description+"</p></div><hr>")
+  $('.all-clubs').append("<div class='tile scroll_"+club._id+"'><a href='"+club.website+"' target='_blank'><h1>"+club.name+"</h1></a><h2>"+club.address+"</h2><div class='toolbar'><div class='toolbar-icon tables'>"+club.numberOfTables+"</div><a href='"+club.website+"' target='_blank'><div class='toolbar-icon booking_"+club.bookable+"'>Bookable</div></a><div class='club-image' style='background-image: url("+club.image+")'></div><p>"+club.description+"</p></div><img src='images/logout.png' class='logged-in delete' data-id='"+club._id+"'  width='20'><hr>")
 }
 
 biliardino.clearForm = function(){
@@ -109,7 +130,7 @@ biliardino.addClubs = function(){
   // Making ajax call to back-end in order to retrieve json bar data
   var ajax = $.ajax({
     method: "get",
-    url: 'http://localhost:3000/api/clubs'
+    url: 'https://biliardino-api.herokuapp.com/api/clubs'
   }).done(function(data){
     $.each(data.clubs, function(index, club){
       biliardino.addClub(club);
@@ -128,7 +149,7 @@ biliardino.addClub = function(club, index) {
     position: {lat: club.lat, lng: club.lng},
     map: window.map,
     title: club.name,
-    icon: "http://i.imgur.com/zAPrWqA.png"
+    icon: "http://i.imgur.com/u05Ellx.png"
   });
   
   // Adding click listener to open info window when marker is clicked
@@ -146,6 +167,20 @@ biliardino.markerClick = function(marker, club) {
     content:'<div class="infowindow"><h3>'+ club.name +'</h3><h4>'+ club.address +'</h4></div>'
   });
 
-  window.map.setCenter(marker.getPosition());
   infowindow.open(window.map, marker);
 };
+
+biliardino.setRequestHeader = function(xhr, settings){
+  var token = getToken();
+  if(token) return xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+}
+
+biliardino.deleteClub = function(){
+  event.preventDefault();
+  $.ajax({
+    url:'https://biliardino-api.herokuapp.com/api/clubs/'+$(this).data().id,
+    type:'delete',
+    beforeSend: biliardino.setRequestHeader
+  });
+  $(this).parent().remove();
+}
