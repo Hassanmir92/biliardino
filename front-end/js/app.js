@@ -119,8 +119,12 @@ biliardino.indexClub = function(){
 }
 
 biliardino.showClub = function(club){
-  $('.all-clubs').append("<div class='tile scroll_"+club._id+"'><a href='"+club.website+"' target='_blank'><h1>"+club.name+"</h1></a><h2>"+club.address+"</h2><div class='toolbar'><div class='toolbar-icon tables'>"+club.numberOfTables+"</div><a href='"+club.website+"' target='_blank'><div class='toolbar-icon booking_"+club.bookable+"'>Bookable</div></a><div class='club-image' style='background-image: url("+club.image+")'></div><p>"+club.description+"</p></div><img src='images/logout.png' class='logged-in delete' data-id='"+club._id+"'  width='20'><hr>")
+  $('.all-clubs').append("<div class='tile scroll_"+club._id+"'><a href='"+club.website+"' target='_blank'><h1>"+club.name+"</h1></a><h2>"+club.address+"</h2><div class='toolbar'><div class='toolbar-icon tables'>"+club.numberOfTables+"</div><a href='"+club.website+"' target='_blank'><div class='toolbar-icon booking_"+club.bookable+"'>Bookable</div></a><div class='club-image' style='background-image: url("+club.image+")'></div><p>"+club.description+"</p></div><hr>");
+  $('.delete').addClass("logged-in");
 }
+
+// delete button code
+// <img src='images/logout.png' class='logged-in delete' data-id='"+club._id+"'  width='20'>
 
 biliardino.clearForm = function(){
   $('#club').trigger("reset");

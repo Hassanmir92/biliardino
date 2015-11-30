@@ -1,7 +1,7 @@
 [{
   "name": "Bar Kick",
   "description": "Continental-style table-football café with René Pierre tables",
-  "image": "http://4.bp.blogspot.com/-NcwbGu3QaTU/TjHU-9vSZtI/AAAAAAAAHuk/9C5G322-yXM/s1600/bar-kick-0836.jpg",
+  "image": "https://4.bp.blogspot.com/-NcwbGu3QaTU/TjHU-9vSZtI/AAAAAAAAHuk/9C5G322-yXM/s1600/bar-kick-0836.jpg",
   "website": "http://www.cafekick.co.uk",
   "numberOfTables": "9",
   "address": "127 Shoreditch High Street, London E1 6JE",
@@ -22,8 +22,8 @@
 },
 {
   "name": "Anglia Grove Snooker Club",
-  "description": "Members club with monthly table football tournaments and weekly 'winner stays   on' nights",
-  "image": "http://www.ltfc.info/images/LTFC%20venue%20image_resized.jpg",
+  "description": "Members club with monthly table football tournaments and weekly 'winner stays on' nights",
+  "image": "https://www.ltfc.info/images/LTFC%20venue%20image_resized.jpg",
   "website": "http://www.ltfc.info/AGSC.html",
   "numberOfTables": "8",
   "address": "26 Marcon Place, London E8 1LP",
@@ -44,7 +44,7 @@
 },
 {
   "name": "Westow House",
-  "description": "Entertaining, vintage-themed pub and beer garden with lots of games, live   music and DJs at weekends",
+  "description": "Entertaining, vintage-themed pub and beer garden with lots of games, live music and DJs at weekends",
   "image": "https://media.timeout.com/images/101810463/617/347/image.jpg",
   "website": "http://westowhouse.com",
   "numberOfTables": "1",
@@ -55,7 +55,7 @@
 },
 {
   "name": "Stapleton Tavern",
-  "description": "Quirky pub with bric-a-brac decor and retro videogames, serves bistro fare and  global beers",
+  "description": "Quirky pub with bric-a-brac decor and retro videogames, serves bistro fare and global beers",
   "image": "http://media-cdn.tripadvisor.com/media/photo-s/08/f4/06/77/the-stapleton-tavern.jpg",
   "website": "http://stapletontavern.com",
   "numberOfTables": "1",

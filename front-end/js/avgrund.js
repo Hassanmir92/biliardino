@@ -1,6 +1,7 @@
 $(function(){
   $('#super-secret-login').avgrund({
     height: 224,
+    width: 250,
     showClose: true,
     holderClass: 'login',
     showCloseText: 'close',
@@ -12,6 +13,7 @@ $(function(){
 
   $('#super-secret-signup').avgrund({
     height: 224,
+    width: 250,
     showClose: true,
     holderClass: 'signup',
     showCloseText: 'close',
