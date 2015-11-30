@@ -29,7 +29,7 @@ div.sidebar {
   box-shadow:         4px 4px 10px 0px rgba(50, 50, 50, 0.8);
   z-index: 1;
   position: absolute;
-  background: #338A2E;
+  background: #2E4172;
   opacity: 0.8;
   width: 385px;
   height: 100vh;
@@ -99,9 +99,7 @@ h1 {
 h2 {
   font-size: 18px;
   font-weight: 300;
-  margin-top: -8px;
-  margin-bottom: 10px;
-  font-style: italic;
+  margin-bottom: 15px;
 }
 
 h3 {
@@ -119,7 +117,7 @@ h4 {
 }
 
 p {
-  margin-top: 10px;
+  margin-top: 15px;
   font-size: 15px;
   font-weight: 300;
 }
@@ -149,7 +147,7 @@ a:link, a:visited, a:hover, a:active {
   z-index: 0.5;
   top: 0;
   right: 20px;
-  width: 170px;
+  width: 300px;
   margin: 20px auto;
 }
 
@@ -160,14 +158,12 @@ a:link, a:visited, a:hover, a:active {
 div.club-image {
   height: 300px;
   width: 300px;
-  border-radius: 3px;
   background-position: center;
   background-size: cover;
 }
 
 div.toolbar-icon {
-  border: 1px solid white;
-  border-radius: 3px;
+  border: 2px solid white;
   padding: 5px 10px;
   display: inline-block;
   margin-right: 10px;
